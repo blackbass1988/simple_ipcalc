@@ -22,7 +22,7 @@ class IpCalc
      * @param bool $returnAsLong if true then function returns array of IP in numeric format
      * @return array
      */
-    public function getMinMaxIpLongFromCidr($cidr, $returnAsLong = true)
+    public function getMinMaxIpFromCidr($cidr, $returnAsLong)
     {
 
         $exploded = explode('/', $cidr);
@@ -53,5 +53,17 @@ class IpCalc
         }
 
         return [$min, $max];
+    }
+
+
+    /**
+     * returns array of min and max addresses in numeric format
+     * @param $cidr
+     * @return array
+     */
+    public function getMinMaxIpLongFromCidr($cidr)
+    {
+        return $this->getMinMaxIpFromCidr($cidr, true);
+
     }
 }

@@ -14,7 +14,7 @@ class IpCalcTest extends TestCase
     public function testSimple($cidr, $min, $max)
     {
         $calc = new \Blackbass\IpCalc(false);
-        list($actualMin, $actualMax) = $calc->getMinMaxIpLongFromCidr($cidr, false);
+        list($actualMin, $actualMax) = $calc->getMinMaxIpFromCidr($cidr, false);
 
         $this->assertEquals($min, $actualMin, "network was " . $cidr);
         $this->assertEquals($max, $actualMax, "network was " . $cidr);
@@ -31,7 +31,7 @@ class IpCalcTest extends TestCase
     public function testOnlyHosts($cidr, $min, $max)
     {
         $calc = new \Blackbass\IpCalc(true);
-        list($actualMin, $actualMax) = $calc->getMinMaxIpLongFromCidr($cidr, false);
+        list($actualMin, $actualMax) = $calc->getMinMaxIpFromCidr($cidr, false);
 
         $this->assertEquals($min, $actualMin, "network was " . $cidr);
         $this->assertEquals($max, $actualMax, "network was " . $cidr);
