@@ -26,7 +26,7 @@ class IpCalc
     {
 
         $exploded = explode('/', $cidr);
-        $maxIpV4 = ip2long('255.255.255.255');
+        $maxIpV4 = 4294967295;//ip2long('255.255.255.255');
 
         $ip = $exploded[0];
         $mask = isset($exploded[1])?(int)$exploded[1]:32;
